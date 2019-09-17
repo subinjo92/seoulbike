@@ -1,6 +1,6 @@
 real_time_plot <- function(id, key){
 
-  load(paste0('./data/deriveddata/station_rf/', id, '.RData'))
+  load(paste0('./prediction_model/', id, '.RData'))
   pred_dat <- predict(model$finalModel, newdata = real_time_crawling(id, 1, key), predict.all = T)$individual
   max_line <- real_time_bicycle(id, key)$parkingBikeTotCnt -1
 
