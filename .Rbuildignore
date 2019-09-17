@@ -1,3 +1,4 @@
+^data-raw$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 
@@ -5,4 +6,3 @@
 .gitignore
 README.md
 .Rhistory
-
