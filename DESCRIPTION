@@ -1,11 +1,23 @@
 Package: seoulbike
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Seoul City's Public Bicycle Real-Time Demand Forecast
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Author: Subin Jo
+Maintainer: The package maintainer <vgd2469@gmail.com>
+Description: Real-time demand forecasting of public bicycles.
+    Rental probability prediction.
+    Rental probability distribution visualization.
+Depends: 
+ R (>= 3.4.1),
+ jsonlite,
+ httr,
+ tidyverse,
+ RCurl,
+ lubridate,
+ ggplot2,
+ data.table,
+ tidyverse,
+ 
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
