@@ -5,7 +5,7 @@ real_time_crawling <- function(id, weather_time, key){
   rent_info <- cycle_info[cycle_info$station_id == id,]
   rent_time <- Sys.time()
   rent_info <- rent_info %>%
-    dplyr::select(id = 'station_id', sigungu = '구분', lat, lon, rent_name = '대여소명', holding_count = '거치대수', emd, school,
+    dplyr::select(station_id, sigungu, lat, lon, rent_name, holding_count, emd, school,
                   subway, culture, travel, han_river, population)
 
   #date, time
@@ -25,38 +25,12 @@ real_time_crawling <- function(id, weather_time, key){
 
 
   #air crawling
-  real_air_url <- URLencode(iconv(paste0('http://openapi.seoul.go.kr:8088/', key, '/json/RealtimeCityAir/1/30/도심권'),
+  real_air_url <- URLencode(iconv(paste0('http://openapi.seoul.go.kr:8088/', key, '/json/RealtimeCityAir/1/30'),
                                   localeToCharset()[1], to = 'UTF-8'))
 
   real_air_json <- getURL(real_air_url)
   air_processed_json <- fromJSON(real_air_json)
-
-  real_air_url_2 <- URLencode(iconv(paste0('http://openapi.seoul.go.kr:8088/', key, '/json/RealtimeCityAir/1/30/동북권'),
-                                    localeToCharset()[1], to = 'UTF-8'))
-
-  real_air_json_2 <- getURL(real_air_url_2)
-  air_processed_json_2 <- fromJSON(real_air_json_2)
-
-  real_air_url_3 <- URLencode(iconv(paste0('http://openapi.seoul.go.kr:8088/', key, '/json/RealtimeCityAir/1/30/동남권'),
-                                    localeToCharset()[1], to = 'UTF-8'))
-
-  real_air_json_3 <- getURL(real_air_url_3)
-  air_processed_json_3 <- fromJSON(real_air_json_3)
-
-  real_air_url_4 <- URLencode(iconv(paste0('http://openapi.seoul.go.kr:8088/', key, '/json/RealtimeCityAir/1/30/서북권'),
-                                    localeToCharset()[1], to = 'UTF-8'))
-
-  real_air_json_4 <- getURL(real_air_url_4)
-  air_processed_json_4 <- fromJSON(real_air_json_4)
-
-  real_air_url_5 <- URLencode(iconv(paste0('http://openapi.seoul.go.kr:8088/', key, '/json/RealtimeCityAir/1/30/서남권'),
-                                    localeToCharset()[1], to = 'UTF-8'))
-
-  real_air_json_5 <- getURL(real_air_url_5)
-  air_processed_json_5 <- fromJSON(real_air_json_5)
-
-  air_processed <- rbind(air_processed_json$RealtimeCityAir$row, air_processed_json_2$RealtimeCityAir$row, air_processed_json_3$RealtimeCityAir$row,
-                         air_processed_json_4$RealtimeCityAir$row, air_processed_json_5$RealtimeCityAir$row)
+  air_processed <- air_processed_json$RealtimeCityAir$row
 
   air <- air_processed[air_processed$MSRSTE_NM == rent_info$sigungu, c('PM10', 'PM25', 'O3', 'NO2',  'CO', 'SO2')]
 
