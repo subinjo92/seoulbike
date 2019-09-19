@@ -6,7 +6,7 @@ real_time_crawling <- function(id, weather_time, key){
   rent_time <- Sys.time()
   rent_info <- rent_info %>%
     dplyr::select(station_id, sigungu, lat, lon, rent_name, holding_count, emd, school,
-                  subway, culture, travel, han_river, population)
+                  subway, culture, travel, han_river, population, id_si)
 
   #date, time
   date <- strsplit(as.character(Sys.time()), split = ' ', fixed = TRUE)[[1]][1]
@@ -42,16 +42,8 @@ real_time_crawling <- function(id, weather_time, key){
   real_weather_json <- getURL(real_weather_url)
   weather_processed_json <- fromJSON(real_weather_json)
 
-  id_si <- c(400, 402, 424, 404, 509, 413, 423, 417, 407, 406, 408, 410, 411, 412, 401, 421, 414, 403, 405, 510, 415, 416, 422, 419, 409)
 
-  sigungu <- c('강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구', '도봉구', '동대문구',
-               '동작구', '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구', '양천구', '영등포구', '용산구', '은평구',
-               '종로구', '중구', '중랑구')
-  id_sigungu <- cbind(id_si, sigungu)
-
-  temp_id <- ifelse(rent_info$sigungu == '종로구', '419', id_sigungu[rent_info$sigungu == id_sigungu[, 2], 1])
-
-  weather <- weather_processed_json$realTimeWeatherObserveInfo$row[weather_processed_json$realTimeWeatherObserveInfo$row$ID == temp_id,
+  weather <- weather_processed_json$realTimeWeatherObserveInfo$row[weather_processed_json$realTimeWeatherObserveInfo$row$ID == rent_info$id_si,
                                                                    c('S01A', 'S02A', 'S03M', 'S05A')]
 
   #interest
