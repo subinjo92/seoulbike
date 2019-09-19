@@ -1,6 +1,6 @@
 real_time_crawling <- function(id, weather_time, key){
   if(!id %in% cycle_info$station_id){
-    stop('학습데이터에 없는 대여소 입니다.')
+    stop('Station is not in the training data.')
   }
   rent_info <- cycle_info[cycle_info$station_id == id,]
   rent_time <- Sys.time()
