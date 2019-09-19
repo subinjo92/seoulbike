@@ -9,7 +9,7 @@ real_time_plot <- function(id, key){
     geom_vline(xintercept = max_line, color = 'red', linetype="dashed") +
     geom_area(data = subset(density_dat, x < max_line), fill = "pink2", alpha = 0.7) +
     geom_area(data = subset(density_dat, x >= max_line), fill = "grey", alpha = 0.4) +
-    xlab('예측값') +
-    ylab('밀도')+
+    xlab('Prediction') +
+    ylab('Density')+
     theme_bw(base_size = 11)
 }
