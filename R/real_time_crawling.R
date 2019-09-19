@@ -1,5 +1,5 @@
 real_time_crawling <- function(id, weather_time, key){
-  if(!id %in% cycle_info$대여소번호){
+  if(!id %in% cycle_info$station_id){
     stop('학습데이터에 없는 대여소 입니다.')
   }
   rent_info <- cycle_info[cycle_info$station_id == id,]
