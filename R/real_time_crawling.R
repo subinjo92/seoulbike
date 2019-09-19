@@ -1,3 +1,15 @@
+#' real-time information crawling
+#'
+#' A function that collects the required explanatory variables for the public bicycle demand prediction model in real time.
+#'
+#' @param id bicycle rental station id
+#' @param weather_time Specify how many hours ago weather data should be collected
+#' @param key Seoul Open Data Plaza api key
+#' @return explanatory variables for the public bicycle demand prediction model in real time
+#' @examples
+#'   real_time_crawling(358, 1, key)
+#' @export
+
 real_time_crawling <- function(id, weather_time, key){
   if(!id %in% cycle_info$station_id){
     stop('Station is not in the training data.')

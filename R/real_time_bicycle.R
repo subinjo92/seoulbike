@@ -1,10 +1,22 @@
-real_time_bicycle <- function(id = 0){
+#' Real-time Public Bicycle Rental station Status
+#'
+#' This function shows the number of bicycles remaining in the public bike rental station in real time.
+#'
+#' @param id bicycle rental station id
+#' @param key Seoul Open Data Plaza api key
+#' @return number of bicycles remaining in real time
+#' @examples
+#'   real_time_bicycle(358, key)
+#' @export
 
-  real_bicycle_url <- 'http://openapi.seoul.go.kr:8088/595a4551767667643630426b5a664b/json/bikeList/1/1000/'
+
+real_time_bicycle <- function(id = 0, key){
+
+  real_bicycle_url <- paste0('http://openapi.seoul.go.kr:8088/', key, '/json/bikeList/1/1000/')
   real_bicycle_json <- getURL(real_bicycle_url)
   bicycle_processed_json <- fromJSON(real_bicycle_json)
 
-  real_bicycle_url_2 <- 'http://openapi.seoul.go.kr:8088/595a4551767667643630426b5a664b/json/bikeList/1001/2000/'
+  real_bicycle_url_2 <- paste0('http://openapi.seoul.go.kr:8088/', key, '595a4551767667643630426b5a664b/json/bikeList/1001/2000/')
   real_bicycle_json_2 <- getURL(real_bicycle_url_2)
   bicycle_processed_json_2 <- fromJSON(real_bicycle_json_2)
 
