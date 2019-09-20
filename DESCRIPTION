@@ -17,6 +17,7 @@ Depends:
  data.table,
  tidyverse,
  lubridate,
+ randomForest,
  
 License: What license is it under?
 Encoding: UTF-8
