@@ -8,8 +8,6 @@
 #' @examples
 #'   real_time_bicycle(358, key)
 #' @export
-
-
 real_time_bicycle <- function(id = 0, key){
 
   real_bicycle_url <- paste0('http://openapi.seoul.go.kr:8088/', key, '/json/bikeList/1/1000/')

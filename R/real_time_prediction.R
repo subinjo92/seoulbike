@@ -8,7 +8,6 @@
 #' @examples
 #'   real_time_prediction(358, key)
 #' @export
-
 real_time_prediction <- function(id, key){
 
   load(paste0('./prediction_model/', id, '.RData'))

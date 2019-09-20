@@ -12,5 +12,4 @@
 #'
 #' @examples
 #' data(cycle_info)
-
 "cycle_info"

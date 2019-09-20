@@ -4,13 +4,12 @@
 #'
 #' @docType data
 #'
-#' @usage data(cycle_log_c_14)
+#' @usage data(cycle_log_c_14_fac)
 #'
 #' @keywords datasets
 #'
 #' @source \href{https://data.seoul.go.kr/}{Seoul Open Data Plaza}
 #'
 #' @examples
-#' data(cycle_log_c_14)
-
-"cycle_log_c_14"
+#' data(cycle_log_c_14_fac)
+"cycle_log_c_14_fac"

@@ -9,7 +9,6 @@
 #' @examples
 #'   real_time_crawling(358, 1, key)
 #' @export
-
 real_time_crawling <- function(id, weather_time, key){
   if(!id %in% cycle_info$station_id){
     stop('Station is not in the training data.')

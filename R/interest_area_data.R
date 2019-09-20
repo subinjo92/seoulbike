@@ -12,5 +12,4 @@
 #'
 #' @examples
 #' data(interest_area)
-
 "interest_area"
