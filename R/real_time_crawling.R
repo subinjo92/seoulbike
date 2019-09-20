@@ -28,7 +28,7 @@ real_time_crawling <- function(id, weather_time, key){
 
   time <- strsplit(real_time, split = ':', fixed = TRUE)[[1]][1]
 
-  day <- as.character(wday(Sys.Date(), label = T, locale = "English_United States"))
+  day <- as.character(lubridate::wday(Sys.Date(), label = T, locale = "English_United States"))
 
   int_day <- str_remove(int_day, '^0{1}')
   month <- str_remove(month, '^0{1}')
