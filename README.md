@@ -1,6 +1,6 @@
 # seoulbike
 
-석사 학위 논문을 위해 진행한 연구를 R 패키지 형태로 제작하였습니다.
+석사 학위 논문을 위해 진행한 연구를 R 패키지 형태로 제작하였습니다.  
 
 대여소별로 수요 예측 모형을 적합하고 이를 바탕으로 실시간 수요 예측을 제공합니다. 실시간 수요 예측을 위해 서울 열린 데이터 광장의 오픈 API를 사용합니다. 
 
@@ -15,9 +15,9 @@ library('seoulbike')
 
 ## usage
 
-실시간 예측을 위해 적합한 모형은 RData 형태로 저장하였습니다.
-https://o365skku-my.sharepoint.com/:f:/g/personal/vgd2468_o365_skku_edu/EvTtINgiBH9MkAPAwmhoDi0B9JwaUi5twY6oU_5Ed7E68Q?e=2Dfl2Q
-위의 사이트에서 해당 모형을 대여소별로 받을 수 있습니다.
+실시간 예측을 위해 적합한 모형은 RData 형태로 저장하였습니다.  
+https://o365skku-my.sharepoint.com/:f:/g/personal/vgd2468_o365_skku_edu/EvTtINgiBH9MkAPAwmhoDi0B9JwaUi5twY6oU_5Ed7E68Q?e=2Dfl2Q  
+위의 사이트에서 해당 모형을 대여소별로 받을 수 있습니다.  
 R의 워킹 디렉토리에 prediction_model 폴더를 생성하고 해당 폴더에 모형 RData 파일을 저장하면 실시간 예측을 진행할 수 있습니다.
 
 ### real_time_bicycle
