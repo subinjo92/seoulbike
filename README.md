@@ -16,7 +16,7 @@ library('seoulbike')
 ## usage
 
 실시간 예측을 위해 적합한 모형은 RData 형태로 저장하였습니다.  
-https://o365skku-my.sharepoint.com/:f:/g/personal/vgd2468_o365_skku_edu/EvTtINgiBH9MkAPAwmhoDi0B9JwaUi5twY6oU_5Ed7E68Q?e=2Dfl2Q  
+https://o365skku-my.sharepoint.com/:f:/g/personal/vgd2468_o365_skku_edu/EhQZPJ2QVSxJrHecKc-dFx8BtBjON2msSDTMNvvcp7x9FA?e=RjDtkL  
 위의 사이트에서 해당 모형을 대여소별로 받을 수 있습니다.  
 R의 워킹 디렉토리에 prediction_model 폴더를 생성하고 해당 폴더에 모형 RData 파일을 저장하면 실시간 예측을 진행할 수 있습니다.
 
